@@ -6,5 +6,6 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redis-16037.c292.ap-southeast-1-1.ec2.cloud.redislabs.com:16037
+  password: <%= ENV["REDIS_PASSWORD"] %>
   channel_prefix: chataya-api_production
