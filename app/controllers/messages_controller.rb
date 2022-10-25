@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
   def create
     room = Room.find(params[:room_id])
     message = room.messages.new(message_params)
-    message.session_id = session_id
+    message.session_id = session_id[:value]
     if message.save!
       ActionCable.server.broadcast "room_#{room.id}", message: message
     end

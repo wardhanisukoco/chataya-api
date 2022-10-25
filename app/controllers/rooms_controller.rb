@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   # POST /rooms
   def create
     @room = Room.new(room_params)
-    @room.session_id = session_id
+    @room.session_id = session_id[:value]
     @room.save!
     json_response(@room, :created)
   end
