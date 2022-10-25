@@ -5,7 +5,8 @@ test:
   adapter: async
 
 production:
-  adapter: redis
-  url: redis://redis-16037.c292.ap-southeast-1-1.ec2.cloud.redislabs.com:16037
-  password: <%= ENV["REDIS_PASSWORD"] %>
-  channel_prefix: chataya-db-prod
+  adapter: async
+  # adapter: redis
+  # url: redis://redis-16037.c292.ap-southeast-1-1.ec2.cloud.redislabs.com:16037
+  # password: <%= ENV["REDIS_PASSWORD"] %>
+  # channel_prefix: chataya-db-prod
