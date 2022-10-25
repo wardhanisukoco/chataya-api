@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @messages = @room.messages.paginate(page: params[:page], per_page: 20).order('id ASC')
     result = {}
     result[:messages] = @messages
-    result[:session_id] = session_id
+    result[:session_id] = session_id[:value]
     json_response(result, :created)
   end
 
